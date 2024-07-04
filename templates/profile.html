@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+        flex: 3;
+        display: flex;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 700px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .search-bar input[type="text"]:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+        .search-bar:hover {
+        border-color: #888;
+        }
+        .zip-code{
+        display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .zip-code input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+
+
+
+        .col-9 {
+            flex: 3;
+        }
+        .col-3 {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .container img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        }
+
+
+
+    </style>
+    <title>Sync</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Enter search">
+        </div>
+        <div class="zip-code">
+            <input type="text" id="zip-code" placeholder="Enter zip code">
+        </div>
+        <button type="button">search</button>
+        <div class="profile-picture">
+            <img src="/Users/desmondagwo/PycharmProjects/pythonProject4/website.1.0.0/static/test.jpg">
+        </div>
+    </div>
+</section>
+<section>
+    <div>
+    {% for job in jobs %}
+        <div class="border-bottom" style="margin-bottom: 16px; border-bottom: 2px solid; border-bottom-color: rgba(210,210,210,210);")>
+            <div class="col-9">
+                <h2 style="margin-bottom: 4px; color: rgba(120, 120, 120, 120")>{{job['title']}}</h2>
+                <div><b>location: </b>{{job['location']}}</div>
+                {%if 'salary' in job%}
+                <div><b>Salary: </b>{{job['salary']}}</div>
+                {% endif %}
+            </div>
+        <div class="col-3">
+            <button type="button" >Apply</button>
+        </div>
+
+        </div>
+    {% endfor %}
+    </div>
+</section>
+</body>
+</html>
