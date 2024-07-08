@@ -1,5 +1,10 @@
 from flask import Flask, render_template, jsonify
+
 app = Flask(__name__)
+app.secret_key   = 'desmondclave'
+
+
+
 
 Jobs = [
     {
@@ -15,11 +20,11 @@ Jobs = [
     'location': 'NJ, USA'
     },
     {
-    'id' : 3,
-    'title' : 'software engineer',
-    'salary': '',
-    'location': 'Tx, USA'
-    }
+    'id' : 2,
+    'title' : 'devops',
+    'salary': '$60/hr',
+    'location': 'NJ, USA'
+    },
 ]
 
 @app.route('/')
@@ -28,9 +33,9 @@ def home():
 
 @app.route('/login')
 def login():
-    return render_template("login.html")
+    return render_template('login.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=["POST" , "GET"])
 def signup():
     return render_template("signup.html")
 

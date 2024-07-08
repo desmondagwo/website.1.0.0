@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body{
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: black;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
         }
         .login-container {
             background-color: white;
@@ -26,9 +26,10 @@
         }
         .login-container input {
             margin-bottom: 10px;
-            padding: 10px;
+            padding: 15px; /* Increased padding */
             border: 1px solid #ccc;
-            border-radius: 10% 0%;
+            border-radius: 5px;
+            font-size: 16px; /* Increased font size */
         }
         .login-container a {
             display: block;
@@ -40,30 +41,29 @@
             text-decoration: underline;
         }
         .login-container button {
-            padding: 10px;
+            padding: 15px; /* Increased padding */
             border: none;
             border-radius: 10% 0%;
             background-color: black;
             color: white;
             cursor: pointer;
+            font-size: 16px; /* Increased font size */
         }
         .login-container button:hover {
             background-color: #0056b3;
         }
     </style>
-    <title>Sync</title>l
+    <title>Sync</title>
 </head>
 <body>
 <div>
     <form class="login-container">
         <input type="text" name="username" placeholder="username">
         <input type="password" name="password" placeholder="password">
-
-    <a href="#">Forgotten Password</a>
-    <a href="/signup">Create Account</a>
-    <button type="button">Login</button>
+        <a href="#">Forgotten Password</a>
+        <a href="/signup">Create Account</a>
+        <button type="button">Login</button>
     </form>
 </div>
-
 </body>
 </html>
